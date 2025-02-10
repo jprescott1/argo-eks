@@ -1,11 +1,10 @@
 name: "Bootstrap Argo CD"
 on:
-  workflow_run:
-    workflows: ["Terraform Apply"]
-    types:
-      - completed
-  workflow_dispatch:
+  pull_request:
+    types: [closed]
+
 permissions: write-all
+
 jobs:
   argo_cd:
     runs-on: ubuntu-latest
